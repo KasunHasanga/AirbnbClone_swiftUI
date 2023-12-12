@@ -13,6 +13,7 @@
 		BF0815D42B2716C100C72330 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0815D32B2716C100C72330 /* Preview Assets.xcassets */; };
 		BF0815ED2B2718EC00C72330 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0815EC2B2718EC00C72330 /* ExploreView.swift */; };
 		BF0815F12B271A6200C72330 /* ListingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0815F02B271A6200C72330 /* ListingItemView.swift */; };
+		BF438B462B282219007F55ED /* SearchAndFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF438B452B282219007F55ED /* SearchAndFilterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		BF0815D32B2716C100C72330 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF0815EC2B2718EC00C72330 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		BF0815F02B271A6200C72330 /* ListingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingItemView.swift; sourceTree = "<group>"; };
+		BF438B452B282219007F55ED /* SearchAndFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAndFilterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				BF0815EC2B2718EC00C72330 /* ExploreView.swift */,
+				BF438B452B282219007F55ED /* SearchAndFilterView.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF438B462B282219007F55ED /* SearchAndFilterView.swift in Sources */,
 				BF0815F12B271A6200C72330 /* ListingItemView.swift in Sources */,
 				BF0815CF2B2716C000C72330 /* ContentView.swift in Sources */,
 				BF0815ED2B2718EC00C72330 /* ExploreView.swift in Sources */,
