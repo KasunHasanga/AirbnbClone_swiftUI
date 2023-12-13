@@ -25,16 +25,30 @@ struct DestinationSearchView: View {
     
     var body: some View {
         VStack {
-            Button{
-                withAnimation (.snappy){
-                    show.toggle()
+            HStack{
+                Button{
+                    withAnimation (.snappy){
+                        show.toggle()
+                    }
+                }label: {
+                   Image(systemName: "xmark.circle")
+                        .imageScale(.large)
+                        .foregroundStyle(.black
+                        )
                 }
-            }label: {
-               Image(systemName: "xmark.circle")
-                    .imageScale(.large)
-                    .foregroundStyle(.black
-                    )
-            }
+                Spacer()
+                
+                if !destination.isEmpty{
+                    Button(action: {
+                        destination = ""
+                    }, label: {
+                        Text("Clear")
+                            .foregroundStyle(.black)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                    })
+                }
+            }.padding()
             
             //where to
             VStack(alignment:.leading){
@@ -132,7 +146,9 @@ struct DestinationSearchView: View {
             .onTapGesture {
                 withAnimation(.snappy) {selectedOptions = .guest}
             }
+         
         }
+        Spacer()
     }
 }
 
