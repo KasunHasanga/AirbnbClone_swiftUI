@@ -34,7 +34,7 @@ struct ListingItemView: View {
                     Text("Nov 3 - 10")
                         .foregroundStyle(.gray)
                     
-                    
+
                     HStack(spacing:4){
                         Text("$567")
                         Text("Night")

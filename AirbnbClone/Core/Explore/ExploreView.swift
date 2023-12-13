@@ -24,8 +24,9 @@ struct ExploreView: View {
                         }
                     }
                 }
-            } .navigationDestination(for: Int.self){
-                listing in Text("Listing Details View")
+            } .navigationDestination(for: Int.self){ listing in
+                ListingDetailsView()
+                    .navigationBarBackButtonHidden()
            
             }
         }
