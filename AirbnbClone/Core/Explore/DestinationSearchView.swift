@@ -18,10 +18,13 @@ struct DestinationSearchView: View {
     @Binding var show: Bool
     @State private var  destination = ""
     @State private var selectedOptions: DestinationSearchOptions = .location
+    @State private var startDate = Date()
+    @State private var endDate = Date()
+    @State private var numGuest = 0
+
     
     var body: some View {
         VStack {
-            
             Button{
                 withAnimation (.snappy){
                     show.toggle()
@@ -69,40 +72,53 @@ struct DestinationSearchView: View {
             }
             
             //date selection view
-            
             VStack(alignment:.leading){
                 if (selectedOptions == .dates){
-                    HStack(alignment:.top) {
-                        Text("Show Expanded View")
+                    Text("When's your trip?")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                      
+                    VStack{
+                        DatePicker("From", selection: $startDate, displayedComponents:.date)
                         
-                        Spacer()
+                        Divider()
+                        
+                        DatePicker("To", selection: $endDate, displayedComponents:.date)
                     }
+                    .foregroundStyle(.gray)
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    
                 }else{
                     CollapsedPickerView(title: "When", descrption: "Add dates")
                 }
                 
             }
             .padding()
-                .frame(height: selectedOptions == .dates ? 120 :64)
+                .frame(height: selectedOptions == .dates ? 180 :64)
                 .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
                 .padding()
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             .onTapGesture {
                 withAnimation(.snappy) {selectedOptions = .dates}
-               
             }
            
-               
-            
             // num guest view
             VStack(alignment:.leading){
                 if (selectedOptions == .guest){
-                    HStack(alignment:.top) {
-                        Text("Show Expanded View")
-                        
-                        Spacer()
+                    Text("Where to?")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                    Stepper{
+                        Text("\(numGuest) Adults")
+                    } onIncrement: {
+                        numGuest += 1
+                    }onDecrement: {
+                        guard numGuest > 0 else {return}
+                        numGuest -= 1
                     }
+                    
                 }else{
                     CollapsedPickerView(title: "Who", descrption: "Add guest")
                 }
@@ -116,9 +132,6 @@ struct DestinationSearchView: View {
             .onTapGesture {
                 withAnimation(.snappy) {selectedOptions = .guest}
             }
-           
-            
-           
         }
     }
 }
