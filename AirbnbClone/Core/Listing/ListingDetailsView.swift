@@ -9,8 +9,6 @@ import SwiftUI
 import MapKit
 
 struct ListingDetailsView: View {
-    
-    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -29,7 +27,7 @@ struct ListingDetailsView: View {
                                 .fill(.white)
                                 .frame(width: 32,height: 32)
                         }
-                        .padding(32)
+                        .padding(62)
                 }
             }
             
@@ -181,12 +179,8 @@ struct ListingDetailsView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 12))
             }
             .padding()
-            
-            
-            
-            
-            
         }
+        .toolbar(.hidden, for: .tabBar)
         .ignoresSafeArea()
         .padding(.bottom,76)
         .overlay(alignment: .bottom){
