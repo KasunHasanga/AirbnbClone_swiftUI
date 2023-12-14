@@ -42,7 +42,15 @@ struct ProfileView: View {
                 .font(.caption)
             }
             
+            // profile option
+            VStack(alignment:.leading ,spacing: 24){
+                ProfileOptionRawView(imageName: "gear", title: "Settting")
+                ProfileOptionRawView(imageName: "gear", title: "Accessibility")
+                ProfileOptionRawView(imageName: "questionmark.circle", title: "visit the help Center")
+            }
+            .padding(.vertical)
         }
+        .padding()
     }
 }
 
